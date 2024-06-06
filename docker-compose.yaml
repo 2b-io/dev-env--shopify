@@ -1,9 +1,9 @@
 version: '3.5'
-name: dev-env--nodejs
+name: dev-env--shopify
 services:
   node:
-    image: node:20
-    container_name: dev-env--nodejs
+    build: .
+    container_name: dev-env--shopify
     command: bash -c "tail -f /dev/null"
     working_dir: /usr/code
     volumes:
