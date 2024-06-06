@@ -9,5 +9,8 @@ services:
     volumes:
       - .:/usr/code
       - /usr/code/node_modules
+      - /usr/code/checkout-customization/node_modules
+      - /usr/code/checkout-customization/extensions/cw-order-discount/node_modules
     ports:
       - 3000:3000
+      - 3456:3456
