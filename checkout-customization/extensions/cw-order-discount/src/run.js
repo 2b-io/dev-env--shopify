@@ -19,9 +19,24 @@ const EMPTY_DISCOUNT = {
  * @returns {FunctionRunResult}
  */
 export function run(input) {
-  const configuration = JSON.parse(
-    input?.discountNode?.metafield?.value ?? "{}"
-  );
-
-  return EMPTY_DISCOUNT;
+  return {
+    discountApplicationStrategy: DiscountApplicationStrategy.First,
+    discounts: [
+      {
+        value: {
+          percentage: {
+            value: "20.0"
+          }
+        },
+        targets: [
+          {
+            orderSubtotal: {
+              excludedVariantIds: []
+            }
+          }
+        ],
+        message: "20% OFF"
+      }
+    ]
+  };
 };
